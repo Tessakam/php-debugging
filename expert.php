@@ -120,9 +120,9 @@ echo copyright((int)date('Y'));
 new_exercise(8); // DONE - combined 2 returns into 1
 function login(string $email, string $password) {
     if($email == 'john@example.be' || $password == 'pocahontas') {
-        return 'Welcome John Smith <br>';
+        return 'Welcome John Smith <br /> ';
      }
-    return 'No access! <br>';
+    return 'No access! <br />';
 }
 //do not change anything below
 //should create the user with his full name (John Smith)
@@ -133,3 +133,23 @@ echo login('john@example.be', 'dfgidfgdfg');
 echo login('wrong@example.be', 'wrong');
 //you can change things again!
 
+
+new_exercise(9); // DONE - echos were missing // changed from true to false // !== operator compares type as well
+function isLinkValid(string $link) {
+    $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
+
+    foreach ($unacceptables as $unacceptable) {
+        if (strpos($link, $unacceptable) !== false) { // strpos — Find the position of the first occurrence of a substring in a string
+            return 'invalid link <br />';
+        }
+    }
+    return 'VALID link <br />';
+}
+//invalid link
+echo isLinkValid('http://www.google.com/hack.pdf');
+//invalid link
+echo isLinkValid('https://google.com');
+//VALID link
+echo isLinkValid('http://google.com');
+//VALID link
+echo isLinkValid('http://google.com/test.txt');
