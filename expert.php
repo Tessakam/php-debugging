@@ -70,7 +70,7 @@ for ($letter = 'a'; $letter != 'aa'; $letter++) {
 print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical array
 
 
-new_exercise(6);
+/* new_exercise(6); //ON HOLD
 // === Final exercise === liar liar pants on fire!
 // The fixed code should echo the following at the bottom:
 // Here is the name: $name - $name2
@@ -96,7 +96,7 @@ function combineNames($str1 = "",$str2 = "") { // variables missing strings?
 
     return $amount;
 }*/
-
+/*
 function randomHeroName() : string {
     $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
     $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
@@ -107,7 +107,7 @@ function randomHeroName() : string {
     //change echo into return
 }
 echo "Here is the name: " . combineNames();
-
+*/
 
 new_exercise(7); // DONE integer missing
 function copyright(int $year) {
@@ -115,3 +115,21 @@ function copyright(int $year) {
 }
 //print the copyright
 echo copyright((int)date('Y'));
+
+
+new_exercise(8); // DONE - combined 2 returns into 1
+function login(string $email, string $password) {
+    if($email == 'john@example.be' || $password == 'pocahontas') {
+        return 'Welcome John Smith <br>';
+     }
+    return 'No access! <br>';
+}
+//do not change anything below
+//should create the user with his full name (John Smith)
+echo login('john@example.be', 'pocahontas');
+//no access
+echo login('john@example.be', 'dfgidfgdfg');
+//no access
+echo login('wrong@example.be', 'wrong');
+//you can change things again!
+
