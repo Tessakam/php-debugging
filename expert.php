@@ -70,7 +70,7 @@ for ($letter = 'a'; $letter != 'aa'; $letter++) {
 print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical array
 
 
-/* new_exercise(6); //ON HOLD
+new_exercise(6); //DONE
 // === Final exercise === liar liar pants on fire!
 // The fixed code should echo the following at the bottom:
 // Here is the name: $name - $name2
@@ -79,35 +79,31 @@ $arr = [];
 
 function combineNames($str1 = "",$str2 = "") { // variables missing strings?
     $params = [$str1, $str2];
-    foreach($params as $param) {
+    foreach($params as &$param) { //add & to solve error: unused local variable
         if ($param === "") {
             $param = randomHeroName();
         }
     }
-    return implode(" - ", $params);
+    return implode(" - ", $params); //solved syntax error + return
     // implode = Join array elements with a string
 }
 
-/* why 2x function randomHeroName
- * function randomHeroName($arr, $amount) {
+/* function randomHeroName 2x not necessary?
+ function randomHeroName($arr, $amount) {
     for ($i = $amount; $i > 0; $i--) {
         array_push($arr, randomHeroName());
     }
-
     return $amount;
 }*/
-/*
+
 function randomHeroName() : string {
     $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
     $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
     $heroes = [$hero_firstnames, $hero_lastnames];
-    $randname = $heroes[rand(0,count($heroes)-1)][rand(0, 10)];
+    return $heroes[rand(0,count($heroes)-1)][rand(0, 10)]; // changed to return
 
-    return $randname;
-    //change echo into return
 }
 echo "Here is the name: " . combineNames();
-*/
 
 new_exercise(7); // DONE integer missing
 function copyright(int $year) {
@@ -155,14 +151,16 @@ echo isLinkValid('http://google.com');
 echo isLinkValid('http://google.com/test.txt');
 
 
-new_exercise(10);
+new_exercise(10); // partly DONE - split the for loop and removed = of <= to solve "undefined offset" and make count a variable
+// result is missing pear?
 
 //Filter the array $areTheseFruits to only contain valid fruits
 //do not change the arrays itself
 $areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
 $validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
 //from here on you can change the code
-for($i=0; $i <= count($areTheseFruits); $i++) {
+$count= count($areTheseFruits);
+for($i=0; $i < $count ; $i++) {
     if(!in_array($areTheseFruits[$i], $validFruits)) {
         unset($areTheseFruits[$i]);
     }
