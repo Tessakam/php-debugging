@@ -56,7 +56,6 @@ foreach($week as &$day) {
 }
 print_r($week);
 
-
 new_exercise(5); // DONE - changed 2th statement to != 'z' but the Z was not showing - saw the solution with != 'az'
 // === Exercise 5 ===
 // The array should be printing every letter of the alfabet (a-z) but instead it does that + aa-yz
@@ -66,7 +65,6 @@ $arr = [];
 for ($letter = 'a'; $letter != 'aa'; $letter++) {
     array_push($arr, $letter);
 }
-
 print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical array
 
 
@@ -77,7 +75,7 @@ new_exercise(6); //DONE
 // $name variables are decided as seen in the code, fix all the bugs whilst keeping the functionality!
 $arr = [];
 
-function combineNames($str1 = "",$str2 = "") { // variables missing strings?
+function combineNames($str1 = "",$str2 = "") {
     $params = [$str1, $str2];
     foreach($params as &$param) { //add & to solve error: unused local variable
         if ($param === "") {
@@ -96,7 +94,7 @@ function combineNames($str1 = "",$str2 = "") { // variables missing strings?
     return $amount;
 }*/
 
-function randomHeroName() : string {
+function randomHeroName() {
     $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
     $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
     $heroes = [$hero_firstnames, $hero_lastnames];
@@ -151,16 +149,16 @@ echo isLinkValid('http://google.com');
 echo isLinkValid('http://google.com/test.txt');
 
 
-new_exercise(10); // partly DONE - split the for loop and removed = of <= to solve "undefined offset" and make count a variable
-// result is missing pear?
+new_exercise(10); // DONE - split the for loop and removed = of <= to solve "undefined offset" and make count a variable
 
 //Filter the array $areTheseFruits to only contain valid fruits
 //do not change the arrays itself
 $areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
 $validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
 //from here on you can change the code
-$count= count($areTheseFruits);
-for($i=0; $i < $count ; $i++) {
+
+$lenght= count($areTheseFruits);
+for($i=0; $i < $lenght ; $i++) {
     if(!in_array($areTheseFruits[$i], $validFruits)) {
         unset($areTheseFruits[$i]);
     }
